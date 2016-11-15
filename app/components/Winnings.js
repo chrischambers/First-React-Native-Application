@@ -16,7 +16,7 @@ export default class Winnings extends React.Component {
   render() {
     return (
       <View style={styles.winnings}>
-        <Text style={styles.winningsText}>Total Won</Text>
+        <Text style={styles.winningsText}>TOTAL WON</Text>
 
         <View style={styles.row}>
           <Text style={[styles.gold, styles.winningsText]}>+500</Text>

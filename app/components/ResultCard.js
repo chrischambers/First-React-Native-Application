@@ -10,7 +10,7 @@ export class Outcome extends React.Component {
   render() {
     return (
       <View style={styles.outcome}>
-        <Text style={styles.outcomeText}>Outcome</Text>
+        <Text style={styles.outcomeText}>WIN</Text>
       </View>
     )
   }
@@ -20,7 +20,7 @@ export class CollectAmount extends React.Component {
   render() {
     return (
       <View style={styles.collectAmount}>
-        <Text style={styles.collectAmountText}>Collect 250</Text>
+        <Text style={styles.collectAmountText}>COLLECT 250</Text>
         <Image source={require('../img/coin.png')} 
              style={styles.coin}
         >

@@ -10,7 +10,7 @@ export class Team extends React.Component {
   render() {
     return (
       <View style={styles.team}>
-        <Text>Team</Text>
+        <Text style={styles.teamText}>TEAM</Text>
       </View>
     )
   }
@@ -39,14 +39,15 @@ export default class TeamBar extends React.Component {
 
 const styles = StyleSheet.create({
   logo: {
-    height: 40,
-    width: 40,
     backgroundColor: 'white',
     alignSelf: 'center',
   },
   team: {
     backgroundColor: 'red',
     flex: 3,
+  },
+  teamText: {
+    color: '#fbfbfb',
   },
   teamBar: {
     height: 20,

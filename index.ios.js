@@ -23,12 +23,12 @@ export default class PlayablScoreScreen extends Component {
         <Image source={require('./app/img/backgroundeffect.png')} 
                style={styles.backdrop}>
 
-          <Text style={styles.heading}>You Won!</Text>
+          <Text style={styles.heading}>YOU WON!</Text>
           <View style={styles.rowContainer}>
             <Image source={require('./app/img/challenge-card.png')} 
                style={styles.icon}>
             </Image>
-            <Text style={styles.subheading}>Challenges</Text>
+            <Text style={styles.subheading}>CHALLENGES</Text>
           </View>
 
           <ChallengeCard />
