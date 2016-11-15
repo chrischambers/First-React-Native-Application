@@ -19,31 +19,33 @@ import Winnings from './app/components/Winnings'
 export default class PlayablScoreScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Image source={require('./app/img/backgroundeffect.png')} 
-               style={styles.backdrop}>
+      <Image source={require('./app/img/background.png')}
+             style={styles.backdrop}>
 
+        <View>
           <Text style={styles.heading}>YOU WON!</Text>
           <View style={styles.rowContainer}>
             <Image source={require('./app/img/challenge-card.png')} 
-               style={styles.icon}>
-            </Image>
+                   style={styles.icon}></Image>
             <Text style={styles.subheading}>CHALLENGES</Text>
           </View>
+        </View>
 
-          <ChallengeCard />
-          <Winnings />
-        </Image>
-      </View>
+        <ChallengeCard />
+        <Winnings />
+      </Image>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  backdrop: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
+    width: null,
+    height: null,
+    backgroundColor: 'rgba(0,0,0,0)',
   },
   rowContainer: {
     flexDirection: 'row',
@@ -51,17 +53,10 @@ const styles = StyleSheet.create({
   heading: {
     color: '#fbfbfb',
     fontSize: 50,
-    backgroundColor: 'rgba(0,0,0,0)',
   },
   subheading: {
     color: '#fbfbfb',
     fontSize: 30,
-    backgroundColor: 'rgba(0,0,0,0)',
-  },
-  backdrop: {
-    flex: 1,
-    alignItems: 'center',
-    width: 310,
   },
 });
 
