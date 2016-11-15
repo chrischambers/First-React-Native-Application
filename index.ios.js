@@ -13,8 +13,7 @@ import {
   View
 } from 'react-native';
 
-import TeamBar from './app/components/TeamBar'
-import ResultCard from './app/components/ResultCard'
+import ChallengeCard from './app/components/ChallengeCard'
 
 export default class PlayablScoreScreen extends Component {
   render() {
@@ -24,8 +23,7 @@ export default class PlayablScoreScreen extends Component {
                style={styles.backdrop}>
           <Text style={styles.heading}>You Won!</Text>
           <Text style={styles.subheading}>Challenges</Text>
-          <TeamBar />
-          <ResultCard />
+          <ChallengeCard />
         </Image>
       </View>
     );
@@ -51,6 +49,7 @@ const styles = StyleSheet.create({
   backdrop: {
     flex: 1,
     alignItems: 'center',
+    width: 310,
   },
 });
 
