@@ -22,7 +22,7 @@ export default class PlayablScoreScreen extends Component {
       <Image source={require('./app/img/background.png')}
              style={styles.backdrop}>
 
-        <View>
+        <View style={styles.headingWrapper}>
           <Text style={styles.heading}>YOU WON!</Text>
           <View style={styles.rowContainer}>
             <Image source={require('./app/img/challenge-card.png')} 
@@ -50,11 +50,21 @@ const styles = StyleSheet.create({
   rowContainer: {
     flexDirection: 'row',
   },
+  headingWrapper: {
+    alignSelf: 'stretch',
+    alignItems: 'center',
+  },
   heading: {
     color: '#fbfbfb',
+    fontFamily: 'BebasNeueBold',
+    transform: [{rotate: '-4deg'}],
+    letterSpacing: 1,
     fontSize: 50,
   },
   subheading: {
+    color: '#fbfbfb',
+    fontFamily: 'BebasNeueBold',
+    transform: [{rotate: '-4deg'}],
     color: '#fbfbfb',
     fontSize: 30,
   },
