@@ -21,6 +21,10 @@ export class CollectAmount extends React.Component {
     return (
       <View style={styles.collectAmount}>
         <Text style={styles.collectAmountText}>Collect 250</Text>
+        <Image source={require('../img/coin.png')} 
+             style={styles.coin}
+        >
+        </Image>
       </View>
     )
   }
@@ -70,6 +74,7 @@ const styles = StyleSheet.create({
     borderColor: '#ffcc00',
     borderStyle: 'solid',
     height: 30,
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },

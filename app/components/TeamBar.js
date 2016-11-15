@@ -6,6 +6,15 @@ import {
   View
 } from 'react-native'
 
+export class Team extends React.Component {
+  render() {
+    return (
+      <View style={styles.team}>
+        <Text>Team</Text>
+      </View>
+    )
+  }
+}
 
 export default class TeamBar extends React.Component {
   constructor () {
@@ -17,18 +26,35 @@ export default class TeamBar extends React.Component {
   render() {
     return (
       <View style={styles.teamBar}>
-        <Text>Team Bar</Text>
+        <Team />
+        <Image source={require('../img/logo.png')} 
+             style={styles.logo}
+        >
+        </Image>
+        <Team />
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  logo: {
+    height: 40,
+    width: 40,
+    backgroundColor: 'white',
+    alignSelf: 'center',
+  },
+  team: {
+    backgroundColor: 'red',
+    flex: 3,
+  },
   teamBar: {
     height: 20,
     alignSelf: 'stretch',
-    backgroundColor: 'blue',
+    backgroundColor: 'white',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
 })
