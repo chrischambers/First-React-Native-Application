@@ -20,7 +20,9 @@ export default class ChallengeCard extends React.Component {
     return (
       <View style={styles.challengeCard}>
         <TeamBar />
-        <ResultCard />
+        <View style={styles.resultCardWrapper}>
+          <ResultCard />
+        </View>
       </View>
     )
   }
@@ -33,10 +35,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     marginTop: 20,
-    padding: 10,
-    paddingTop: 20,
     marginLeft: 15,
     marginRight: 15,
+  },
+  resultCardWrapper: {
+    padding: 15,
+    alignSelf: 'stretch',
+    backgroundColor: '#303038',
+    borderRadius: 2,
   },
 })
 
