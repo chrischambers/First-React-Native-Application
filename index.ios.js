@@ -4,7 +4,7 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   AppRegistry,
   StyleSheet,
@@ -13,19 +13,31 @@ import {
   View
 } from 'react-native';
 
+import TeamBar from './app/components/TeamBar'
+import ResultCard from './app/components/ResultCard'
+
 export default class PlayablScoreScreen extends Component {
   render() {
     return (
-      <Image source={require('./app/img/backgroundeffect.png')} 
-             style={styles.backdrop}>
-        <Text style={styles.heading}>You Won!</Text>
-        <Text style={styles.subheading}>Challenges</Text>
-      </Image>
+      <View style={styles.container}>
+        <Image source={require('./app/img/backgroundeffect.png')} 
+               style={styles.backdrop}>
+          <Text style={styles.heading}>You Won!</Text>
+          <Text style={styles.subheading}>Challenges</Text>
+          <TeamBar />
+          <ResultCard />
+        </Image>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   heading: {
     color: '#fbfbfb',
     fontSize: 50,
@@ -38,7 +50,6 @@ const styles = StyleSheet.create({
   },
   backdrop: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
   },
 });
