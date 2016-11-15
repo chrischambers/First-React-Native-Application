@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 
 import ChallengeCard from './app/components/ChallengeCard'
+import Winnings from './app/components/Winnings'
 
 export default class PlayablScoreScreen extends Component {
   render() {
@@ -31,6 +32,7 @@ export default class PlayablScoreScreen extends Component {
           </View>
 
           <ChallengeCard />
+          <Winnings />
         </Image>
       </View>
     );
