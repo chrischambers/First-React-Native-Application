@@ -2,15 +2,16 @@ import React from 'react'
 import {
   StyleSheet,
   Image,
-  Text,
   View
 } from 'react-native'
+
+import { AppText } from './CommonElements'
 
 export class Outcome extends React.Component {
   render() {
     return (
       <View style={styles.outcome}>
-        <Text style={styles.outcomeText}>WIN</Text>
+        <AppText style={styles.outcomeText}>WIN</AppText>
       </View>
     )
   }
@@ -20,7 +21,7 @@ export class CollectAmount extends React.Component {
   render() {
     return (
       <View style={styles.collectAmount}>
-        <Text style={styles.collectAmountText}>COLLECT 250</Text>
+        <AppText style={styles.collectAmountText}>COLLECT 250</AppText>
         <Image source={require('../img/coin.png')} 
              style={styles.coin}
         >
@@ -49,7 +50,6 @@ export default class ResultCard extends React.Component {
 
 const styles = StyleSheet.create({
   resultCard: {
-    height: 90,
     backgroundColor: 'red',
     alignSelf: 'stretch',
     justifyContent: 'center',
@@ -62,25 +62,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  outcomeText: {
-    fontFamily: 'Cochin',
-    fontWeight: 'bold',
-    color: '#fbfbfb',
-  },
   collectAmount: {
     backgroundColor: '#303038',
     alignSelf: 'stretch',
     borderWidth: 2,
     borderColor: '#ffcc00',
     borderStyle: 'solid',
-    height: 30,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  outcomeText: {
+    fontSize: 40,
+    paddingTop: 8,
+  },
   collectAmountText: {
-    fontFamily: 'Cochin',
-    fontWeight: 'bold',
-    color: '#fbfbfb',
+    fontSize: 25,
+    paddingTop: 8,
+    paddingBottom: 3,
+    paddingRight: 1,
   },
 })

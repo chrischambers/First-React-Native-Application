@@ -13,8 +13,10 @@ import {
   View
 } from 'react-native';
 
+import { AppHeading } from './app/components/CommonElements'
 import ChallengeCard from './app/components/ChallengeCard'
 import Winnings from './app/components/Winnings'
+
 
 export default class PlayablScoreScreen extends Component {
   render() {
@@ -23,11 +25,11 @@ export default class PlayablScoreScreen extends Component {
              style={styles.backdrop}>
 
         <View style={styles.headingWrapper}>
-          <Text style={styles.heading}>YOU WON!</Text>
+          <AppHeading style={styles.heading}>YOU WON!</AppHeading>
           <View style={styles.rowContainer}>
             <Image source={require('./app/img/challenge-card.png')} 
                    style={styles.icon}></Image>
-            <Text style={styles.subheading}>CHALLENGES</Text>
+            <AppHeading style={styles.subheading}>CHALLENGES</AppHeading>
           </View>
         </View>
 
@@ -55,17 +57,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   heading: {
-    color: '#fbfbfb',
-    fontFamily: 'BebasNeueBold',
-    transform: [{rotate: '-4deg'}],
-    letterSpacing: 1,
-    fontSize: 50,
+    fontSize: 70,
   },
   subheading: {
-    color: '#fbfbfb',
-    fontFamily: 'BebasNeueBold',
-    transform: [{rotate: '-4deg'}],
-    color: '#fbfbfb',
     fontSize: 30,
   },
 });

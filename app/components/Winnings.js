@@ -2,9 +2,10 @@ import React from 'react'
 import {
   StyleSheet,
   Image,
-  Text,
   View
 } from 'react-native'
+
+import { AppHeading } from './CommonElements'
 
 export default class Winnings extends React.Component {
   constructor () {
@@ -16,15 +17,15 @@ export default class Winnings extends React.Component {
   render() {
     return (
       <View style={styles.winnings}>
-        <Text style={styles.winningsText}>TOTAL WON</Text>
+        <AppHeading style={styles.winningsText}>TOTAL WON</AppHeading>
 
         <View style={styles.row}>
-          <Text style={[styles.gold, styles.winningsText]}>+500</Text>
+          <AppHeading style={[styles.winningsText, styles.coins]}>+500</AppHeading>
           <Image source={require('../img/coin2.png')}></Image>
         </View>
 
         <View style={styles.row}>
-          <Text style={[styles.xp, styles.winningsText]}>+1200</Text>
+          <AppHeading style={[styles.winningsText, styles.xp]}>+1200</AppHeading>
           <Image source={require('../img/xp.png')}></Image>
         </View>
       </View>
@@ -34,24 +35,30 @@ export default class Winnings extends React.Component {
 
 const styles = StyleSheet.create({
   winnings: {
-    backgroundColor: 'rgba(0,0,0,0)',
+    alignItems: 'center',
   },
   winningsText: {
-    color: '#fbfbfb',
-    fontSize: 25,
+    fontSize: 30,
+    letterSpacing: -1,
   },
   row: {
     flexDirection: 'row',
   },
-  gold: {
+  coins: {
+    fontSize: 60,
     textShadowColor: '#ffcc00',
     textShadowRadius: 3,
     textShadowOffset: {width: 2, height: 2},
+    paddingTop: 5,
+    paddingRight: 5,
+    paddingBottom: 0,
   },
   xp: {
+    fontSize: 40,
     textShadowColor: '#32d900',
     textShadowRadius: 3,
     textShadowOffset: {width: 2, height: 2},
+    paddingRight: 14,
   },
 })
 
