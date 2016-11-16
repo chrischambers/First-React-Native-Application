@@ -58,6 +58,10 @@ const styles = StyleSheet.create({
     height: null,
     backgroundColor: 'rgba(0,0,0,0)',
   },
+  icon: {
+    marginTop: 3,
+    marginRight: 8,
+  },
   rowContainer: {
     flexDirection: 'row',
   },
@@ -69,7 +73,7 @@ const styles = StyleSheet.create({
     fontSize: 70,
   },
   subheading: {
-    fontSize: 30,
+    fontSize: 33,
   },
 });
 
