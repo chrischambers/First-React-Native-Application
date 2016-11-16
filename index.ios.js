@@ -28,6 +28,8 @@ export default class PlayablScoreScreen extends React.Component {
     // In a real system we would presumably have the user available, but as
     // this is a mockup we don't actually care about the value:
     const user = null
+    const data = this.getLatestPredictionFor(user)
+    const coins = data.currentPot + data.stake
 
     return (
       <Image source={require('./app/img/background.png')}
@@ -42,8 +44,8 @@ export default class PlayablScoreScreen extends React.Component {
           </View>
         </View>
 
-        <ChallengeCard predData={this.getLatestPredictionFor(user)} />
-        <Winnings />
+        <ChallengeCard predData={data} />
+        <Winnings coins={coins} experience={data.experience}/>
       </Image>
     );
   }

@@ -19,9 +19,14 @@
     "status": 1,
     "stake": 75,
     "currentPot": 150,
+    "experience": 1200,
     "thumbUpCount": 1,
     "thumbDownCount": 1,
     "backgroundColor": "#c21b2c",
+    "outcome": {
+        "winner": "homeTeam",
+        "loser": "awayTeam"
+    },
     "predictions": [
       {
         "type": "teamDraw",

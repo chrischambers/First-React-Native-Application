@@ -12,19 +12,25 @@ import ResultCard from './ResultCard'
 
 export default class ChallengeCard extends React.Component {
   render() {
+    const data = this.props.predData
+    let [winner, loser] = [null, null]
+    if (!data.outcome.winner) {
+      winner = data.outcome.winner
+      loser = data.outcome.loser
+    } else {
+      winner = data.fixture[data.outcome.winner]
+      loser = data.fixture[data.outcome.loser]
+    }
+
     return (
       <View style={styles.challengeCard}>
         <TeamBar fixture={this.props.predData.fixture} />
         <View style={styles.resultCardWrapper}>
-          <ResultCard />
+          <ResultCard winner={winner} loser={loser} />
         </View>
       </View>
     )
   }
-}
-
-ChallengeCard.propTypes = {
-  predData: React.PropTypes.object.isRequired,
 }
 
 const styles = StyleSheet.create({

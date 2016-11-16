@@ -8,18 +8,32 @@ import {
 import { AppText } from './CommonElements'
 
 
-export class Outcome extends React.Component {
+class Outcome extends React.Component {
   render() {
-    return (
-      <View style={styles.outcome}>
-        <AppText style={styles.outcomeText}>WIN</AppText>
-      </View>
-    )
+    let isDraw = !this.props.winner
+    if (isDraw) {
+      return (
+        <View style={styles.outcome}>
+          <AppText style={styles.outcomeText}>Draw</AppText>
+        </View>
+      )
+    } else {
+      const color = this.props.winner.color
+      return (
+        <View style={[styles.outcome, {backgroundColor: color}]}>
+          <Image source={{uri: this.props.winner.logo}}
+                 style={styles.logoLarge} />
+          <AppText style={styles.outcomeText}>
+            Win
+          </AppText>
+        </View>
+      )
+    }
   }
 }
 
 
-export class CollectAmount extends React.Component {
+class CollectAmount extends React.Component {
   render() {
     return (
       <View style={styles.collectAmount}>
@@ -36,7 +50,7 @@ export default class ResultCard extends React.Component {
   render() {
     return (
       <View style={styles.resultCard}>
-        <Outcome />
+        <Outcome winner={this.props.winner} loser={this.props.loser}/>
         <CollectAmount />
       </View>
     )
@@ -45,17 +59,15 @@ export default class ResultCard extends React.Component {
 
 const styles = StyleSheet.create({
   resultCard: {
-    backgroundColor: 'red',
     alignSelf: 'stretch',
     justifyContent: 'center',
     alignItems: 'center',
   },
   outcome: {
-    backgroundColor: '#c21b2c',
     alignSelf: 'stretch',
-    height: 60,
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'row',
   },
   collectAmount: {
     backgroundColor: '#303038',
@@ -67,9 +79,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  logoLarge: {
+    height: 70,
+    width: 70,
+    marginTop: 10,
+    marginBottom: 10,
+    marginRight: 10,
+  },
   outcomeText: {
-    fontSize: 40,
-    paddingTop: 8,
+    fontSize: 50,
+    paddingTop: 30,
+    paddingBottom: 30,
   },
   collectAmountText: {
     fontSize: 25,

@@ -16,20 +16,25 @@ export default class Winnings extends React.Component {
 
         <View style={styles.row}>
           <AppHeading style={[styles.winningsText, styles.coins]}>
-            +500
+            +{this.props.coins}
           </AppHeading>
           <Image source={require('../img/coin2.png')} />
         </View>
 
         <View style={styles.row}>
           <AppHeading style={[styles.winningsText, styles.xp]}>
-            +1200
+            +{this.props.experience}
           </AppHeading>
           <Image source={require('../img/xp.png')} />
         </View>
       </View>
     )
   }
+}
+
+Winnings.propTypes = {
+  coins: React.PropTypes.number.isRequired,
+  experience: React.PropTypes.number.isRequired,
 }
 
 const styles = StyleSheet.create({
