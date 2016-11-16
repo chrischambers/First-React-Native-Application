@@ -10,10 +10,13 @@ import { AppText } from './CommonElements'
 
 class Team extends React.Component {
   render() {
-    const color = this.props.team.color
+    let dynamicStyle = {backgroundColor: this.props.team.color}
+    if (this.props.status === "away") {
+      dynamicStyle.flexDirection = 'row-reverse'
+    }
     return (
       <View style={[styles.team, this.props.style]}>
-        <View style={[{backgroundColor: color}, styles.teamWrapper]}>
+        <View style={[styles.teamWrapper, dynamicStyle]}>
           <Image source={{uri: this.props.team.logo}} style={styles.teamLogo} />
           <AppText style={styles.teamText}>
             {this.props.team.name}
@@ -33,13 +36,13 @@ export default class TeamBar extends React.Component {
   render() {
     return (
       <View style={styles.teamBar}>
-        <Team team={this.props.fixture.homeTeam} />
+        <Team team={this.props.fixture.homeTeam} status="home" />
         <View style={styles.logoWrapper}>
           <Image source={require('../img/logo.png')} 
               style={styles.logo}>
           </Image>
         </View>
-        <Team team={this.props.fixture.awayTeam} />
+        <Team team={this.props.fixture.awayTeam} status="away" />
       </View>
     )
   }
