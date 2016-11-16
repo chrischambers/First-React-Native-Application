@@ -12,10 +12,13 @@ class Team extends React.Component {
   render() {
     const color = this.props.team.color
     return (
-      <View style={styles.team}>
-        <AppText style={[{backgroundColor: color}, styles.teamText]}>
-          {this.props.team.name}
-        </AppText>
+      <View style={[styles.team, this.props.style]}>
+        <View style={[{backgroundColor: color}, styles.teamWrapper]}>
+          <Image source={{uri: this.props.team.logo}} style={styles.teamLogo} />
+          <AppText style={styles.teamText}>
+            {this.props.team.name}
+          </AppText>
+        </View>
       </View>
     )
   }
@@ -59,18 +62,30 @@ const styles = StyleSheet.create({
   },
   team: {
     flex: 1,
+    alignItems: 'stretch',
     justifyContent: 'center',
+  },
+  teamLogo: {
+    width: 20,
+    height: 20,
+    marginLeft: 3,
+    marginRight: 3,
   },
   teamText: {
     paddingLeft: 5,
     paddingRight: 5,
     paddingTop: 3,
+    fontSize: 17,
     textShadowColor: '#303038',
     textShadowRadius: 3,
     textShadowOffset: {width: 1, height: 1},
   },
+  teamWrapper: {
+    alignItems: 'flex-end',
+    flexDirection: 'row',
+  },
   teamBar: {
-    top: 8,
+    top: 7,
     zIndex: 5,
     alignSelf: 'stretch',
     flexDirection: 'row',
