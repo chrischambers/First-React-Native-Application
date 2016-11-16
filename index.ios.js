@@ -16,7 +16,7 @@ import {
 import { AppHeading } from './app/components/CommonElements'
 import ChallengeCard from './app/components/ChallengeCard'
 import Winnings from './app/components/Winnings'
-
+import { Api } from './app/utils/Api'
 
 export default class PlayablScoreScreen extends Component {
   render() {
