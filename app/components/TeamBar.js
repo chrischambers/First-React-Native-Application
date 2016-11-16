@@ -39,7 +39,7 @@ export default class TeamBar extends React.Component {
         <Team team={this.props.fixture.homeTeam} status="home" />
         <View style={styles.logoWrapper}>
           <Image source={require('../img/logo.png')} 
-              style={styles.logo}>
+              style={styles.Companylogo}>
           </Image>
         </View>
         <Team team={this.props.fixture.awayTeam} status="away" />
@@ -55,12 +55,12 @@ TeamBar.propTypes = {
 const styles = StyleSheet.create({
   logoWrapper: {
     backgroundColor: 'white',
-    paddingTop: 3,
-    paddingBottom: 5,
-    paddingRight: 4,
+    paddingTop: 2,
+    paddingBottom: 2,
+    paddingRight: 5,
     paddingLeft: 4,
   },
-  logo: {
+  Companylogo: {
     alignSelf: 'center',
   },
   team: {
@@ -69,8 +69,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   teamLogo: {
-    width: 20,
-    height: 20,
+    width: 18,
+    height: 18,
     marginLeft: 3,
     marginRight: 3,
   },

@@ -25,9 +25,7 @@ export class CollectAmount extends React.Component {
       <View style={styles.collectAmount}>
         <AppText style={styles.collectAmountText}>COLLECT 250</AppText>
         <Image source={require('../img/coin.png')} 
-             style={styles.coin}
-        >
-        </Image>
+             style={styles.coin} />
       </View>
     )
   }

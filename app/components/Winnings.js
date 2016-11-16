@@ -7,26 +7,25 @@ import {
 
 import { AppHeading } from './CommonElements'
 
+
 export default class Winnings extends React.Component {
-  constructor () {
-    super()
-    this.state = {
-      
-    }
-  }
   render() {
     return (
       <View style={styles.winnings}>
         <AppHeading style={styles.winningsText}>TOTAL WON</AppHeading>
 
         <View style={styles.row}>
-          <AppHeading style={[styles.winningsText, styles.coins]}>+500</AppHeading>
-          <Image source={require('../img/coin2.png')}></Image>
+          <AppHeading style={[styles.winningsText, styles.coins]}>
+            +500
+          </AppHeading>
+          <Image source={require('../img/coin2.png')} />
         </View>
 
         <View style={styles.row}>
-          <AppHeading style={[styles.winningsText, styles.xp]}>+1200</AppHeading>
-          <Image source={require('../img/xp.png')}></Image>
+          <AppHeading style={[styles.winningsText, styles.xp]}>
+            +1200
+          </AppHeading>
+          <Image source={require('../img/xp.png')} />
         </View>
       </View>
     )

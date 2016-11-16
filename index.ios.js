@@ -19,11 +19,16 @@ import { Api } from './app/utils/Api'
 
 
 export default class PlayablScoreScreen extends React.Component {
-  getLatestPrediction(user) {
+
+  getLatestPredictionFor(user) {
     return Api.getLatestUserPrediction()
   }
 
   render() {
+    // In a real system we would presumably have the user available, but as
+    // this is a mockup we don't actually care about the value:
+    const user = null
+
     return (
       <Image source={require('./app/img/background.png')}
              style={styles.backdrop}>
@@ -37,7 +42,7 @@ export default class PlayablScoreScreen extends React.Component {
           </View>
         </View>
 
-        <ChallengeCard predData={this.getLatestPrediction(null)} />
+        <ChallengeCard predData={this.getLatestPredictionFor(user)} />
         <Winnings />
       </Image>
     );
