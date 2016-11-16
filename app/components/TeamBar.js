@@ -28,10 +28,11 @@ export default class TeamBar extends React.Component {
     return (
       <View style={styles.teamBar}>
         <Team />
-        <Image source={require('../img/logo.png')} 
-             style={styles.logo}
-        >
-        </Image>
+        <View style={styles.logoWrapper}>
+          <Image source={require('../img/logo.png')} 
+              style={styles.logo}>
+          </Image>
+        </View>
         <Team />
       </View>
     )
@@ -39,23 +40,33 @@ export default class TeamBar extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  logo: {
+  logoWrapper: {
     backgroundColor: 'white',
+    paddingTop: 3,
+    paddingBottom: 5,
+    paddingRight: 4,
+    paddingLeft: 4,
+  },
+  logo: {
     alignSelf: 'center',
-    marginTop: 3,
-    marginBottom: 3,
-    marginRight: 5,
-    marginLeft: 5,
   },
   team: {
-    backgroundColor: 'red',
+    flex: 1,
     justifyContent: 'center',
   },
   teamText: {
+    backgroundColor: 'blue',
+    paddingLeft: 5,
+    paddingRight: 5,
+    paddingTop: 3,
+    textShadowColor: '#303038',
+    textShadowRadius: 3,
+    textShadowOffset: {width: 1, height: 1},
   },
   teamBar: {
+    top: 8,
+    zIndex: 5,
     alignSelf: 'stretch',
-    backgroundColor: 'white',
     flexDirection: 'row',
   },
 })

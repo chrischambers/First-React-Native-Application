@@ -30,11 +30,9 @@ export default class ChallengeCard extends React.Component {
 
 const styles = StyleSheet.create({
   challengeCard: {
-    backgroundColor: 'green',
     alignSelf: 'stretch',
     justifyContent: 'space-around',
     alignItems: 'center',
-    marginTop: 20,
     marginLeft: 15,
     marginRight: 15,
   },
