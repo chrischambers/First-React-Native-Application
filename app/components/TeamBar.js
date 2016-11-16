@@ -7,36 +7,43 @@ import {
 
 import { AppText } from './CommonElements'
 
-export class Team extends React.Component {
+
+class Team extends React.Component {
   render() {
+    const color = this.props.team.color
     return (
       <View style={styles.team}>
-        <AppText style={styles.teamText}>TEAM</AppText>
+        <AppText style={[{backgroundColor: color}, styles.teamText]}>
+          {this.props.team.name}
+        </AppText>
       </View>
     )
   }
 }
 
+Team.propTypes = {
+  team: React.PropTypes.object.isRequired,
+}
+
+
 export default class TeamBar extends React.Component {
-  constructor () {
-    super()
-    this.state = {
-      
-    }
-  }
   render() {
     return (
       <View style={styles.teamBar}>
-        <Team />
+        <Team team={this.props.fixture.homeTeam} />
         <View style={styles.logoWrapper}>
           <Image source={require('../img/logo.png')} 
               style={styles.logo}>
           </Image>
         </View>
-        <Team />
+        <Team team={this.props.fixture.awayTeam} />
       </View>
     )
   }
+}
+
+TeamBar.propTypes = {
+  fixture: React.PropTypes.object.isRequired,
 }
 
 const styles = StyleSheet.create({
@@ -55,7 +62,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   teamText: {
-    backgroundColor: 'blue',
     paddingLeft: 5,
     paddingRight: 5,
     paddingTop: 3,

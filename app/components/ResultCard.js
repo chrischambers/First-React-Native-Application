@@ -7,6 +7,7 @@ import {
 
 import { AppText } from './CommonElements'
 
+
 export class Outcome extends React.Component {
   render() {
     return (
@@ -16,6 +17,7 @@ export class Outcome extends React.Component {
     )
   }
 }
+
 
 export class CollectAmount extends React.Component {
   render() {
@@ -31,13 +33,8 @@ export class CollectAmount extends React.Component {
   }
 }
 
+
 export default class ResultCard extends React.Component {
-  constructor () {
-    super()
-    this.state = {
-      
-    }
-  }
   render() {
     return (
       <View style={styles.resultCard}>
@@ -56,7 +53,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   outcome: {
-    backgroundColor: 'blue',
+    backgroundColor: '#c21b2c',
     alignSelf: 'stretch',
     height: 60,
     alignItems: 'center',

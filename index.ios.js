@@ -4,12 +4,11 @@
  * @flow
  */
 
-import React, { Component } from 'react'
+import React from 'react'
 import {
   AppRegistry,
   StyleSheet,
   Image,
-  Text,
   View
 } from 'react-native';
 
@@ -18,7 +17,12 @@ import ChallengeCard from './app/components/ChallengeCard'
 import Winnings from './app/components/Winnings'
 import { Api } from './app/utils/Api'
 
-export default class PlayablScoreScreen extends Component {
+
+export default class PlayablScoreScreen extends React.Component {
+  getLatestPrediction(user) {
+    return Api.getLatestUserPrediction()
+  }
+
   render() {
     return (
       <Image source={require('./app/img/background.png')}
@@ -33,7 +37,7 @@ export default class PlayablScoreScreen extends Component {
           </View>
         </View>
 
-        <ChallengeCard />
+        <ChallengeCard predData={this.getLatestPrediction(null)} />
         <Winnings />
       </Image>
     );

@@ -8,6 +8,7 @@ export const Api = {
        .then(resp => resp.json())
        .then(...etc)
     */
-    return require('./mockedData.json')
+    return require('./mockedData.json')[0]
   },
+
 }

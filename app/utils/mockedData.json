@@ -5,11 +5,13 @@
       "homeTeam": {
        "id": 100,
        "name": "Chelsea FC",
+       "color": "#044fa1",
        "logo": "https://s3.amazonaws.com/playabl/assets/teams/1097/clublogo.png"
       },
       "awayTeam": {
        "id": 2,
        "name": "Everton FC",
+       "color": "#c21b2c",
        "logo": "https://s3.amazonaws.com/playabl/assets/teams/209/clublogo.png"
       },
       "id": 111
