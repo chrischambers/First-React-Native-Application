@@ -15,13 +15,13 @@ import {
 import { AppHeading } from './app/components/CommonElements'
 import ChallengeCard from './app/components/ChallengeCard'
 import Winnings from './app/components/Winnings'
-import { Api } from './app/utils/Api'
+import Api from './app/utils/Api'
 
 
 export default class PlayablScoreScreen extends React.Component {
 
   getLatestPredictionFor(user) {
-    return Api.getLatestUserPrediction()
+    return Api.getLatestUserPrediction(user)
   }
 
   render() {
@@ -29,7 +29,7 @@ export default class PlayablScoreScreen extends React.Component {
     // this is a mockup we don't actually care about the value:
     const user = null
     const data = this.getLatestPredictionFor(user)
-    const coins = data.currentPot + data.stake
+    const coinsWon = data.currentPot + data.stake
 
     return (
       <Image source={require('./app/img/background.png')}
@@ -44,8 +44,9 @@ export default class PlayablScoreScreen extends React.Component {
           </View>
         </View>
 
-        <ChallengeCard predData={data} />
-        <Winnings coins={coins} experience={data.experience}/>
+        <ChallengeCard data={data} />
+        <Winnings coins={coinsWon} experience={data.experience}/>
+
       </Image>
     );
   }

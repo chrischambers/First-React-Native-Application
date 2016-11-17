@@ -1,4 +1,4 @@
-export const Api = {
+const Api = {
   getLatestUserPrediction(username) {
     /*
      I'm obviously mocking this out, but ordinarily we'd use something like
@@ -12,3 +12,4 @@ export const Api = {
   },
 
 }
+export default Api
