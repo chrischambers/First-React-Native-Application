@@ -24,8 +24,8 @@
     "thumbDownCount": 1,
     "backgroundColor": "#c21b2c",
     "outcome": {
-        "winner": "homeTeam",
-        "loser": "awayTeam"
+        "winner": null,
+        "loser": null
     },
     "predictions": [
       {
