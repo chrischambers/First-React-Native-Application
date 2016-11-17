@@ -19,6 +19,9 @@ component for the more general case (displaying the score irrespective of the
 outcome). It would be a pretty trivial task to customise the 'You Won!' heading
 based on whether the user's predictions agreed with the outcome.
 
+Obviously some of the styling could be finessed for better correspondence with
+the mockup, but the brief specified that no more than 8 hours or so be spent.
+
 The json provided had a few issues with it - as a result I edited it to
 reflect the actual alterations I'd make to the backend:
 
