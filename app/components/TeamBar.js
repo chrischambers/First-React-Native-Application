@@ -7,50 +7,45 @@ import {
 
 import { AppText } from './CommonElements'
 
-
-class Team extends React.Component {
-  render() {
-    let dynamicStyle = {backgroundColor: this.props.team.color}
-    if (this.props.status === "away") {
-      dynamicStyle.flexDirection = 'row-reverse'
-    }
-    return (
-      <View style={[styles.team, this.props.style]}>
-        <View style={[styles.teamWrapper, dynamicStyle]}>
-          <Image source={{uri: this.props.team.logo}} style={styles.teamLogo} />
-          <AppText style={styles.teamText}>
-            {this.props.team.name}
-          </AppText>
-        </View>
-      </View>
-    )
+const Team = props => {
+  let dynamicStyle = {backgroundColor: props.team.color}
+  if (props.status === "away") {
+    dynamicStyle.flexDirection = 'row-reverse'
   }
+  return (
+    <View style={[styles.team, props.style]}>
+      <View style={[styles.teamWrapper, dynamicStyle]}>
+        <Image source={{uri: props.team.logo}} style={styles.teamLogo} />
+        <AppText style={styles.teamText}>
+          {props.team.name}
+        </AppText>
+      </View>
+    </View>
+  )
 }
 
 Team.propTypes = {
   team: React.PropTypes.object.isRequired,
 }
 
-
-export default class TeamBar extends React.Component {
-  render() {
-    return (
-      <View style={styles.teamBar}>
-        <Team team={this.props.fixture.homeTeam} status="home" />
-        <View style={styles.logoWrapper}>
-          <Image source={require('../img/logo.png')} 
-              style={styles.Companylogo}>
-          </Image>
-        </View>
-        <Team team={this.props.fixture.awayTeam} status="away" />
+const TeamBar = props => {
+  return (
+    <View style={styles.teamBar}>
+      <Team team={props.fixture.homeTeam} status="home" />
+      <View style={styles.logoWrapper}>
+        <Image source={require('../img/logo.png')} 
+            style={styles.companyLogo}>
+        </Image>
       </View>
-    )
-  }
+      <Team team={props.fixture.awayTeam} status="away" />
+    </View>
+  )
 }
 
 TeamBar.propTypes = {
   fixture: React.PropTypes.object.isRequired,
 }
+export default TeamBar
 
 const styles = StyleSheet.create({
   logoWrapper: {
@@ -60,7 +55,7 @@ const styles = StyleSheet.create({
     paddingRight: 5,
     paddingLeft: 4,
   },
-  Companylogo: {
+  companyLogo: {
     alignSelf: 'center',
   },
   team: {
