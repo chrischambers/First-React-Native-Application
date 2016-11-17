@@ -5,6 +5,8 @@ estimate total time spent to be approximately 6-8 hours, though it's hard to
 gauge given the painfully long bootstrapping/compilation times on a 7 year old
 Macbook Pro.
 
+![Brief and Outcome](./react-native-app.png "Brief and Outcome")
+
 To see it in action, it should simply be a case of firing up a terminal, cding
 to the project directory, and entering
 
