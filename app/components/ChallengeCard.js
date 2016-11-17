@@ -26,7 +26,7 @@ export default class ChallengeCard extends React.Component {
       <View style={styles.challengeCard}>
         <TeamBar fixture={this.props.predData.fixture} />
         <View style={styles.resultCardWrapper}>
-          <ResultCard winner={winner} loser={loser} />
+          <ResultCard collect={data.currentPot} winner={winner} loser={loser} />
         </View>
       </View>
     )

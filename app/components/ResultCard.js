@@ -37,7 +37,7 @@ class CollectAmount extends React.Component {
   render() {
     return (
       <View style={styles.collectAmount}>
-        <AppText style={styles.collectAmountText}>COLLECT 250</AppText>
+        <AppText style={styles.collectAmountText}>COLLECT {this.props.collect}</AppText>
         <Image source={require('../img/coin.png')} 
              style={styles.coin} />
       </View>
@@ -45,13 +45,16 @@ class CollectAmount extends React.Component {
   }
 }
 
+CollectAmount.propTypes = {
+  collect: React.PropTypes.number.isRequired,
+}
 
 export default class ResultCard extends React.Component {
   render() {
     return (
       <View style={styles.resultCard}>
         <Outcome winner={this.props.winner} loser={this.props.loser}/>
-        <CollectAmount />
+        <CollectAmount collect={this.props.collect} />
       </View>
     )
   }
