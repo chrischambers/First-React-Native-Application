@@ -26,7 +26,7 @@ The json provided had a few issues with it - as a result I edited it to
 reflect the actual alterations I'd make to the backend:
 
 1. The team fixture was a bit sparse in terms of the details provided - as a
-   result I modified it to include both team's signature colours for displaying
+   result I modified it to include both teams signature colours for displaying
    in the `TeamBar` component.
 2. I've included the outcome in the json, which is necessary for the
    `ResultCard` component to output informative messages. A draw is represented
